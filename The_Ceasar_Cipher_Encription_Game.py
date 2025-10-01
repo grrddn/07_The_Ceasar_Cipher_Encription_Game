@@ -9,21 +9,6 @@ while direction != "encode" and direction != "decode":
 text = input("Ingresa el mensaje que quieres encriptar: \n").lower()
 shift = int(input("Ingresa el número de desplazamiento: \n"))
 
-def decrypt(text, shift):
-  new_text = ""
-  for i in text:
-    if i in alphabet:
-      position = alphabet.index(i)
-      if position - shift < 0:
-        new_position = position - shift + 26
-      else:
-        new_position = position - shift
-      new_letter = alphabet[new_position]
-      new_text += new_letter
-    else:
-      new_text += i
-  print(new_text)
-
 if direction == "encode":
   encript_function.encrypt(text, shift)
 elif direction == "decode":
